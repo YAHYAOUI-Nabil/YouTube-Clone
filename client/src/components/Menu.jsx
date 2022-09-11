@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import ItemTitle from './ItemTitle';
+import { useStateContext } from '../contexts/ContextsProvider';
 
 
 import HomeIcon from '@mui/icons-material/Home';
@@ -27,16 +29,16 @@ const Container = styled.div`
     background-color: white;
     color: #202020;
     height: 90.5vh;
-    width: 18vw;
     font-size: 14px;
     overflow: hidden;
-    position: fixed;
+    position: sticky;
     bottom: 0;
+    left: 0;
+    top: 8.6vh;
+    width: ${(props) => props.active === true ? '16vw' : '5vw'};
     &:hover{
         overflow: auto;
-    }
-    
-    
+    } 
     ::-webkit-scrollbar {
         padding-top: 10px;
         width: 10px;
@@ -48,7 +50,6 @@ const Container = styled.div`
 	border-radius: 10px;
 	background-color: #afadad;
     }
-
 `
 const Wrapper = styled.div`
     padding: 0px 0px;
@@ -64,115 +65,115 @@ const Item = styled.div`
         background-color: #f9f9f9;
     }
 `
-const ItemMenu = styled.div`
+const ItemMenu = styled.span`
     display: flex;
     align-items: center;
     padding: 5px 20px;
     font-size: 15px;
+    display: ${(props) => !props.active && 'none'};
 `
 const Hr = styled.hr`
     margin: 15px 0px;
+    display: ${(props) => !props.active && 'none'};
+`
+const Span = styled.span`
+    
 `
 
 const Menu = () => {
+    const {activeMenu} = useStateContext();
   return (
-    <Container>
+    <Container active={activeMenu}>
         <Wrapper>
             <Item>
                 <HomeIcon />
-                Home
+                <ItemTitle title='Home'/>
             </Item>
             <Item>
                 <ExploreIcon />
-                Explore
+                <ItemTitle title='Explore'/>
             </Item>
             <Item>
                 <ElectricBoltIcon />
-                Shorts
+                <ItemTitle title='Shorts'/>
             </Item>
             <Item>
                 <SubscriptionsIcon />
-                Subscriptions
+                <ItemTitle title='Subscriptions'/>
             </Item>
-            <Hr />
+            <Hr active={activeMenu}/>
             <Item>
                 <VideoLibraryIcon />
-                Library
+                <ItemTitle title='Library'/>
             </Item>
             <Item>
                 <HistoryIcon />
-                History
+                <ItemTitle title='History'/>
             </Item>
             <Item>
                 <SmartDisplayIcon />
-                Your videos
+                <ItemTitle title='Your videos'/>
             </Item>
             <Item>
                 <WatchLaterIcon />
-                Watch later
+                <ItemTitle title='Watch later'/>
             </Item>
             <Item>
                 <ThumbUpOffAltIcon />
-                Liked videos
+                <ItemTitle title='Liked videos'/>
             </Item>
             <Item>
                 <PlaylistPlayIcon />
-                My tutoriels
+                <ItemTitle title='My tutoriels'/>
             </Item>
-            <Hr />
-            <ItemMenu>
-                SUBSCRIPTIONS
-            </ItemMenu>
-            <Hr />
-            <ItemMenu>
-                EXPLORE
-            </ItemMenu>
+            <Hr active={activeMenu}/>
+            <ItemMenu active={activeMenu}>SUBSCRIPTIONS</ItemMenu>
+            <Hr active={activeMenu}/>
+            <ItemMenu active={activeMenu}>EXPLORE</ItemMenu>
             <Item>
                 <SportsEsportsIcon />
-                Gaming
+                <ItemTitle title='Gaming'/>
             </Item>
             <Item>
                 <EmojiEventsIcon />
-                Sport
+                <ItemTitle title='Sport'/>
             </Item>
-            <Hr />
-            <ItemMenu>
-                MORE FROM YOUTUBE
-            </ItemMenu>
+            <Hr active={activeMenu}/>
+            <ItemMenu active={activeMenu}>MORE FROM YOUTUBE</ItemMenu>
             <Item>
                 <SlowMotionVideoIcon />
-                Creator Studio
+                <ItemTitle title='Creator Studio'/>
             </Item>
             <Item>
                 <PlayCircleIcon />
-                YouTube Music
+                <ItemTitle title='YouTube Music'/>
             </Item>
             <Item>
                 <YouTubeIcon />
-                YouTube Kids
+                <ItemTitle title='YouTube Kids'/>
             </Item>
             <Item>
                 <OndemandVideoIcon />
-                YouTube TV
+                <ItemTitle title='YouTube TV'/>
             </Item>
-            <Hr />
+            <Hr active={activeMenu}/>
             <Item>
                 <SettingsIcon />
-                Settings
+                <ItemTitle title='Settings'/>
             </Item>
             <Item>
                 <FlagIcon />
-                Report history
+                <ItemTitle title='Report history'/>
             </Item>
             <Item>
                 <HelpOutlineIcon />
-                Help
+                <ItemTitle title='Help'/>
             </Item>
             <Item>
                 <AnnouncementIcon />
-                Send feedback
+                <ItemTitle title='Send feedback'/>
             </Item>
-            <Hr />
+            <Hr active={activeMenu}/>
         </Wrapper>
     </Container>
   )

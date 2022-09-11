@@ -1,16 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useStateContext } from '../contexts/ContextsProvider';
+
 const Container = styled.div`
-    position: relative;
     display: flex;
     flex-direction: column;
-    width: 82vw;
-    margin-left: 18vw;
+    width: ${(props) => props.active === true ? '84vw' : '95vw'};
 `
 const Filters = styled.div`
     position: sticky;
     top: 8.6vh;
-    left: 18vw;
     right: 0;
     z-index: 88;
     height: 8vh;
@@ -42,21 +41,26 @@ const FilterItem = styled.li`
 const Main = styled.div`
     display: flex;
     background-color: #f9f9f9;
+    padding-left: 2vw;
 `
 const Wrapper = styled.div`
-    flex: 5;
     display: flex;
     flex-wrap: wrap;
     gap: 1%;
     margin: 20px;
 `
 const VideoContainer = styled.div`
-    width: 24%;
+    /* width: 24%; */
+`
+const Video = styled.video`
+    width: ${(props) => props.active===false ? '21vw' : '18vw'};
+    height: 25vh;
 `
 
 const Home = () => {
+    const {activeMenu} = useStateContext();
   return (
-    <Container>
+    <Container active={activeMenu}>
         <Filters>
             <FilterList>
                 <FilterItem>All</FilterItem>
@@ -73,104 +77,101 @@ const Home = () => {
         <Main>
             <Wrapper>
                 <VideoContainer>
-                    <video src='https://youtu.be/hP77Rua1E0c' width="250" height='150' controls></video>  
+                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <video src='https://youtu.be/hP77Rua1E0c' width="250" height='150' controls></video>  
+                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <video src='https://youtu.be/hP77Rua1E0c' width="250" height='150' controls></video>  
+                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <video src='https://youtu.be/hP77Rua1E0c' width="250" height='150' controls></video>  
+                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <video src='https://youtu.be/hP77Rua1E0c' width="250" height='150' controls></video>  
+                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <video src='https://youtu.be/hP77Rua1E0c' width="250" height='150' controls></video>  
+                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <video src='https://youtu.be/hP77Rua1E0c' width="250" height='150' controls></video>  
+                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <video src='https://youtu.be/hP77Rua1E0c' width="250" height='150' controls></video>  
+                    <Video src='https://youtu.be/hP77Rua1E0c'  active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <video src='https://youtu.be/hP77Rua1E0c' width="250" height='150' controls></video>  
+                    <Video src='https://youtu.be/hP77Rua1E0c'  active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <video src='https://youtu.be/hP77Rua1E0c' width="250" height='150' controls></video>  
+                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <video src='https://youtu.be/hP77Rua1E0c' width="250" height='150' controls></video>  
+                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <video src='https://youtu.be/hP77Rua1E0c' width="250" height='150' controls></video>  
+                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <video src='https://youtu.be/hP77Rua1E0c' width="250" height='150' controls></video>  
+                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <video src='https://youtu.be/hP77Rua1E0c' width="250" height='150' controls></video>  
+                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <video src='https://youtu.be/hP77Rua1E0c' width="250" height='150' controls></video>  
+                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <video src='https://youtu.be/hP77Rua1E0c' width="250" height='150' controls></video>  
+                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
-                
-                
-              
             </Wrapper>
         </Main>
     </Container>

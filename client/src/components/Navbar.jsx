@@ -9,6 +9,7 @@ import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import VideoCallIcon from '@mui/icons-material/VideoCall';
 import { Badge } from '@mui/material';
+import { useStateContext } from '../contexts/ContextsProvider';
 
 const Container = styled.div`
     display: flex;
@@ -121,11 +122,16 @@ const Avatar = styled.img`
 `
 
 const Navbar = () => {
+    const {setActiveMenu} = useStateContext()
+
+    const handleMenu = () => {
+        setActiveMenu(prev => !prev)
+    }
   return (
     <Container>
         <Left>
             <MenuBar>
-                <Button>
+                <Button onClick={handleMenu}>
                     <MenuIcon />
                 </Button>
             </MenuBar>
