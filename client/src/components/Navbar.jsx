@@ -1,14 +1,25 @@
 import React from 'react'
 import styled from 'styled-components'
 import logo from '../images/logo.png'
+import avatar from '../images/avatar.jpg'
 
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import VideoCallIcon from '@mui/icons-material/VideoCall';
+import { Badge } from '@mui/material';
 
 const Container = styled.div`
     display: flex;
+    position: sticky;
+    height: 8vh;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 999;
     padding: 2px 0px;
+    background-color: white;
 `
 const Left = styled.div`
     display: flex;
@@ -56,12 +67,13 @@ const FormContainer =styled.div`
 const Form =styled.div`
     display: flex;
     align-items: center;
+    height: 6vh;
     width: 100%;
     border: 1px solid #dbd8d8;
 `
 const Input =styled.input`
     width: 90%;
-    height: 2.4rem;
+    height: 90%;
     padding-left: 10px;
     border: unset;
     font-size: 16px;
@@ -71,23 +83,41 @@ const Input =styled.input`
     }
 `
 const Submit =styled.button`
-    height: 2.8rem;
+    height: 100%;
     width: 10%;
     border: unset;
     border-left: 1px solid #dbd8d8;
     background-color: #f9f9f9;
+    cursor: pointer;
 `
 const Voice =styled.button`
     border-radius: 50%;
     border: unset;
-    height: 2.8rem;
-    width: 7%;
+    height: 6vh;
+    width: 2.8rem;
     background-color: #f9f9f9;
-    
+    cursor: pointer;
 `
 const Right = styled.div`
     display: flex;
     flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6%;
+    padding: 0px 2rem ;
+`
+const Item = styled.div`
+    cursor: pointer;
+`
+const Img = styled.div`
+    display: flex;
+    border-radius: 50%;
+    cursor: pointer;
+`
+const Avatar = styled.img`
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
 `
 
 const Navbar = () => {
@@ -117,7 +147,19 @@ const Navbar = () => {
                 </Voice>
             </FormContainer>
         </Center>
-        <Right></Right>
+        <Right>
+            <Item>
+                <VideoCallIcon />
+            </Item>
+            <Item>
+                <Badge badgeContent='4' color='warning'>
+                    <NotificationsNoneIcon />
+                </Badge>
+            </Item>
+            <Img>
+                <Avatar src={avatar}/>
+            </Img>
+        </Right>
     </Container>
   )
 }

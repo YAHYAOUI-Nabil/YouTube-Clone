@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import logo from '../images/logo.png'
+
 
 import HomeIcon from '@mui/icons-material/Home';
 import ExploreIcon from '@mui/icons-material/Explore';
@@ -24,29 +24,36 @@ import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import SlowMotionVideoIcon from '@mui/icons-material/SlowMotionVideo';
 
 const Container = styled.div`
-    flex: 1;
-    background-color: #202020;
-    display: none;
-    color: white;
-    height: 100vh;
+    background-color: white;
+    color: #202020;
+    height: 90.5vh;
+    width: 18vw;
     font-size: 14px;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
     &:hover{
-        overflow: scroll;
+        overflow: auto;
     }
+    
+    
+    ::-webkit-scrollbar {
+        padding-top: 10px;
+        width: 10px;
+        background-color: white;
+        border-radius: 10px;
+        
+    }
+    ::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	background-color: #afadad;
+    }
+
 `
 const Wrapper = styled.div`
-    padding: 18px 0px;
+    padding: 0px 0px;
 `
-const Logo = styled.div`
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-weight: bold;
-    margin: 0px 0px 25px 20px;
-`
-const Image = styled.img`
-    height: 25px;
-`
+
 const Item = styled.div`
     display: flex;
     align-items: center;
@@ -54,7 +61,7 @@ const Item = styled.div`
     cursor: pointer;
     padding: 10px 20px;
     &:hover{
-        background-color: #373737;
+        background-color: #f9f9f9;
     }
 `
 const ItemMenu = styled.div`
@@ -65,17 +72,12 @@ const ItemMenu = styled.div`
 `
 const Hr = styled.hr`
     margin: 15px 0px;
-    border: 0.5px solid #373737;
 `
 
 const Menu = () => {
   return (
     <Container>
         <Wrapper>
-            <Logo>
-                <Image src={logo}/>
-                YouTube
-            </Logo>
             <Item>
                 <HomeIcon />
                 Home
