@@ -28,13 +28,14 @@ import SlowMotionVideoIcon from '@mui/icons-material/SlowMotionVideo';
 const Container = styled.div`
     background-color: white;
     color: #202020;
-    height: 90.5vh;
+    height: 91.5vh;
     font-size: 14px;
     overflow: hidden;
     position: sticky;
     bottom: 0;
     left: 0;
     top: 8.6vh;
+    z-index: 9999;
     width: ${(props) => props.active === true ? '16vw' : '5vw'};
     &:hover{
         overflow: auto;
@@ -76,9 +77,7 @@ const Hr = styled.hr`
     margin: 15px 0px;
     display: ${(props) => !props.active && 'none'};
 `
-const Span = styled.span`
-    
-`
+
 
 const Menu = () => {
     const {activeMenu} = useStateContext();

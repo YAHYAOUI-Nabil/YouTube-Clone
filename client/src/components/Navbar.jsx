@@ -127,6 +127,7 @@ const Navbar = () => {
     const handleMenu = () => {
         setActiveMenu(prev => !prev)
     }
+    
   return (
     <Container>
         <Left>
@@ -135,7 +136,7 @@ const Navbar = () => {
                     <MenuIcon />
                 </Button>
             </MenuBar>
-            <Logo>
+            <Logo >
                 <Image src={logo}/>
                 YouTube
             </Logo>

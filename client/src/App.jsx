@@ -1,28 +1,24 @@
 import React from 'react'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import styled from 'styled-components'
-import Menu from './components/Menu'
 import Navbar from './components/Navbar'
-import Home from './pages/Home'
-import { useStateContext } from './contexts/ContextsProvider';
+import LandingPage from './pages/LandingPage'
+import SingleVideoPage from './pages/SingleVideoPage';
 
 const Container = styled.div`
     position: relative;
 `
-const Wrapper = styled.div`
-    display: flex;
-    gap: 1%;
-`
 
 const App = () => {
-  const {activeMenu} = useStateContext();
   return (
     <Container>
         <Navbar />
-        <Wrapper>
-            {/* {activeMenu && <Menu />} */}
-            <Menu />
-            <Home />
-        </Wrapper>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/single-video" element={<SingleVideoPage />} />
+          </Routes>
+        </BrowserRouter>
     </Container>
   )
 }
