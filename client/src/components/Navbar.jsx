@@ -10,6 +10,7 @@ import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import VideoCallIcon from '@mui/icons-material/VideoCall';
 import { Badge } from '@mui/material';
 import { useStateContext } from '../contexts/ContextsProvider';
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
     display: flex;
@@ -123,6 +124,7 @@ const Avatar = styled.img`
 
 const Navbar = () => {
     const {setActiveMenu} = useStateContext()
+    const navigate = useNavigate()
 
     const handleMenu = () => {
         setActiveMenu(prev => !prev)
@@ -136,7 +138,7 @@ const Navbar = () => {
                     <MenuIcon />
                 </Button>
             </MenuBar>
-            <Logo >
+            <Logo onClick={()=> navigate('/')}>
                 <Image src={logo}/>
                 YouTube
             </Logo>

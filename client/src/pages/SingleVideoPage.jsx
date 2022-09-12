@@ -4,6 +4,7 @@ import { useStateContext } from '../contexts/ContextsProvider';
 
 
 import Menu from '../components/Menu'
+import Navbar from '../components/Navbar';
 
 
 const Container = styled.div`
@@ -57,6 +58,8 @@ const Video = styled.video`
 const SingleVideoPage = () => {
     const {activeMenu, setActiveMenu} = useStateContext();
   return (
+    <>
+    <Navbar />
     <Container>
         {activeMenu && 
             <MenuContainer>
@@ -194,6 +197,7 @@ const SingleVideoPage = () => {
         </Wrapper>
         
     </Container>
+    </>
   )
 }
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components'
 import { useStateContext } from '../contexts/ContextsProvider';
 
@@ -55,10 +56,12 @@ const VideoContainer = styled.div`
 const Video = styled.video`
     width: ${(props) => props.active===false ? '21vw' : '18vw'};
     height: 25vh;
+    cursor: pointer;
 `
 
 const Home = () => {
     const {activeMenu} = useStateContext();
+    const navigate = useNavigate()
   return (
     <Container active={activeMenu}>
         <Filters>
@@ -76,14 +79,14 @@ const Home = () => {
         </Filters>
         <Main>
             <Wrapper>
-                <VideoContainer>
-                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
+                <VideoContainer >
+                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} onClick={()=> navigate('/single-video')} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
+                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} onClick={()=> navigate('/single-video')} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
