@@ -20,4 +20,8 @@ app.use(cors())
 
 connectDB()
 
+app.use('/api/youtube', (req, res) =>{
+    res.send('hello')
+})
+
 app.listen(port, () => console.log(`server started on port ${port}`))
