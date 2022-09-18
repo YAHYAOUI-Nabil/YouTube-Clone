@@ -70,7 +70,7 @@ const SingleVideoPage = () => {
         <Wrapper>
             <VideoContainer>
                 <div>
-                    <Video src='https://youtu.be/hP77Rua1E0c' controls></Video>  
+                    <Video src='' controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
@@ -81,7 +81,7 @@ const SingleVideoPage = () => {
             </VideoContainer>
             <SuggestedVides>
                 <SuggestedVideoContainer>
-                    <VideoSuggested src='https://youtu.be/hP77Rua1E0c' controls></VideoSuggested>
+                    <VideoSuggested src='' controls></VideoSuggested>
                     <div>
                         <div>video1</div>
                         <div>Nabil Yahyaoui</div>
@@ -89,7 +89,7 @@ const SingleVideoPage = () => {
                     </div>
                 </SuggestedVideoContainer>
                 <SuggestedVideoContainer>
-                    <VideoSuggested src='https://youtu.be/hP77Rua1E0c' controls></VideoSuggested>
+                    <VideoSuggested src='' controls></VideoSuggested>
                     <div>
                         <div>video1</div>
                         <div>Nabil Yahyaoui</div>
@@ -97,7 +97,7 @@ const SingleVideoPage = () => {
                     </div>
                 </SuggestedVideoContainer>
                 <SuggestedVideoContainer>
-                    <VideoSuggested src='https://youtu.be/hP77Rua1E0c' controls></VideoSuggested>
+                    <VideoSuggested src='' controls></VideoSuggested>
                     <div>
                         <div>video1</div>
                         <div>Nabil Yahyaoui</div>
@@ -105,7 +105,7 @@ const SingleVideoPage = () => {
                     </div>
                 </SuggestedVideoContainer>
                 <SuggestedVideoContainer>
-                    <VideoSuggested src='https://youtu.be/hP77Rua1E0c' controls></VideoSuggested>
+                    <VideoSuggested src='' controls></VideoSuggested>
                     <div>
                         <div>video1</div>
                         <div>Nabil Yahyaoui</div>
@@ -113,7 +113,7 @@ const SingleVideoPage = () => {
                     </div>
                 </SuggestedVideoContainer>
                 <SuggestedVideoContainer>
-                    <VideoSuggested src='https://youtu.be/hP77Rua1E0c' controls></VideoSuggested>
+                    <VideoSuggested src='' controls></VideoSuggested>
                     <div>
                         <div>video1</div>
                         <div>Nabil Yahyaoui</div>
@@ -121,7 +121,7 @@ const SingleVideoPage = () => {
                     </div>
                 </SuggestedVideoContainer>
                 <SuggestedVideoContainer>
-                    <VideoSuggested src='https://youtu.be/hP77Rua1E0c' controls></VideoSuggested>
+                    <VideoSuggested src='' controls></VideoSuggested>
                     <div>
                         <div>video1</div>
                         <div>Nabil Yahyaoui</div>
@@ -129,7 +129,7 @@ const SingleVideoPage = () => {
                     </div>
                 </SuggestedVideoContainer>
                 <SuggestedVideoContainer>
-                    <VideoSuggested src='https://youtu.be/hP77Rua1E0c' controls></VideoSuggested>
+                    <VideoSuggested src='' controls></VideoSuggested>
                     <div>
                         <div>video1</div>
                         <div>Nabil Yahyaoui</div>
@@ -137,7 +137,7 @@ const SingleVideoPage = () => {
                     </div>
                 </SuggestedVideoContainer>
                 <SuggestedVideoContainer>
-                    <VideoSuggested src='https://youtu.be/hP77Rua1E0c' controls></VideoSuggested>
+                    <VideoSuggested src='' controls></VideoSuggested>
                     <div>
                         <div>video1</div>
                         <div>Nabil Yahyaoui</div>
@@ -145,7 +145,7 @@ const SingleVideoPage = () => {
                     </div>
                 </SuggestedVideoContainer>
                 <SuggestedVideoContainer>
-                    <VideoSuggested src='https://youtu.be/hP77Rua1E0c' controls></VideoSuggested>
+                    <VideoSuggested src='' controls></VideoSuggested>
                     <div>
                         <div>video1</div>
                         <div>Nabil Yahyaoui</div>
@@ -153,7 +153,7 @@ const SingleVideoPage = () => {
                     </div>
                 </SuggestedVideoContainer>
                 <SuggestedVideoContainer>
-                    <VideoSuggested src='https://youtu.be/hP77Rua1E0c' controls></VideoSuggested>
+                    <VideoSuggested src='' controls></VideoSuggested>
                     <div>
                         <div>video1</div>
                         <div>Nabil Yahyaoui</div>
@@ -161,7 +161,7 @@ const SingleVideoPage = () => {
                     </div>
                 </SuggestedVideoContainer>
                 <SuggestedVideoContainer>
-                    <VideoSuggested src='https://youtu.be/hP77Rua1E0c' controls></VideoSuggested>
+                    <VideoSuggested src='' controls></VideoSuggested>
                     <div>
                         <div>video1</div>
                         <div>Nabil Yahyaoui</div>
@@ -169,7 +169,7 @@ const SingleVideoPage = () => {
                     </div>
                 </SuggestedVideoContainer>
                 <SuggestedVideoContainer>
-                    <VideoSuggested src='https://youtu.be/hP77Rua1E0c' controls></VideoSuggested>
+                    <VideoSuggested src='' controls></VideoSuggested>
                     <div>
                         <div>video1</div>
                         <div>Nabil Yahyaoui</div>
@@ -177,7 +177,7 @@ const SingleVideoPage = () => {
                     </div>
                 </SuggestedVideoContainer>
                 <SuggestedVideoContainer>
-                    <VideoSuggested src='https://youtu.be/hP77Rua1E0c' controls></VideoSuggested>
+                    <VideoSuggested src='' controls></VideoSuggested>
                     <div>
                         <div>video1</div>
                         <div>Nabil Yahyaoui</div>
@@ -185,7 +185,7 @@ const SingleVideoPage = () => {
                     </div>
                 </SuggestedVideoContainer>
                 <SuggestedVideoContainer>
-                    <VideoSuggested src='https://youtu.be/hP77Rua1E0c' controls></VideoSuggested>
+                    <VideoSuggested src='' controls></VideoSuggested>
                     <div>
                         <div>video1</div>
                         <div>Nabil Yahyaoui</div>

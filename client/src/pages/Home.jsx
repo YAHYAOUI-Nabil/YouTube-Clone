@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components'
 import { useStateContext } from '../contexts/ContextsProvider';
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+
+import { categories } from '../utils/constants';
+
 
 const Container = styled.div`
     display: flex;
     flex-direction: column;
-    width: ${(props) => props.active === true ? '84vw' : '95vw'};
+    width: ${(props) => props.active === true ? '82vw' : '93vw'};
 `
 const Filters = styled.div`
     position: sticky;
@@ -19,26 +24,49 @@ const Filters = styled.div`
     background-color: white;
     border-top: 0.01rem solid #d3cfcf;
     padding: 0px;
+    
     `
 const FilterList = styled.ul`
     display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    
+    overflow-x: scroll;
     width: 100%;
     align-items: center;
     justify-content: space-between;
     list-style-type: none;
     padding: 0px;
-    margin:0% 2%;
+    margin:0% 2% 0% -4%;
+    ::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+    }
     `
 const FilterItem = styled.li`
-    background-color: #f3efef;
     border: 0.01rem solid #d3cfcf;
     border-radius: 20px 20px 20px 20px;
     padding: 5px 20px;
+    white-space: nowrap;
+    width: fit-content;
     cursor: pointer;
+    background: #eee6e6;
     &:hover{
-        background-color: #d3cfcf;
+        background: #d3cfcf;
     }
     `
+const ArrowContainer = styled.div`
+    z-index: 5;
+    background-color: white;
+    height: 100%;
+    width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 0px #fcfcfc;
+    border-radius : 50% 50% 50% 50%;
+    cursor: pointer;
+`
 const Main = styled.div`
     display: flex;
     background-color: #f9f9f9;
@@ -62,115 +90,147 @@ const Video = styled.video`
 const Home = () => {
     const {activeMenu} = useStateContext();
     const navigate = useNavigate()
+    const [videos, setVideos] = useState([])
+    const [selectedCategory, setSelectedCategory] = useState('All')
+
+    const [scrollPosition, setScrollPosition] = useState(0)
+
+    useEffect(() => {
+        setScrollPosition(document?.getElementById("dom").scrollLeft)
+        
+    }, [setScrollPosition])
+    
+    const handleScrollLeft = () => {
+        var element = document?.getElementById("dom")
+        element.scrollLeft += 20
+        setScrollPosition(document?.getElementById("dom").scrollLeft) 
+    }
+    const handleScrollRight = () => {
+        var element = document?.getElementById("dom")
+        element.scrollLeft -= 20
+        setScrollPosition(document?.getElementById("dom").scrollLeft) 
+    }
+    
+
   return (
     <Container active={activeMenu}>
         <Filters>
-            <FilterList>
-                <FilterItem>All</FilterItem>
-                <FilterItem>Mixes</FilterItem>
-                <FilterItem>CSS</FilterItem>
-                <FilterItem>Computer programming</FilterItem>
-                <FilterItem>Music</FilterItem>
-                <FilterItem>Live</FilterItem>
-                <FilterItem>Practice</FilterItem>
-                <FilterItem>Arabic Hip Hop</FilterItem>
-                <FilterItem>Sport</FilterItem>
+            <ArrowContainer onClick={handleScrollLeft}>
+                <KeyboardArrowLeftIcon/>
+            </ArrowContainer>
+            
+            <FilterList id="dom">
+                {categories.map((category) => (
+                    <FilterItem cat={selectedCategory}
+                        key={category.name} 
+                        onClick={() => setSelectedCategory(category.name)}
+                        style={{backgroundColor: category.name=== selectedCategory && '#333232',
+                                color : category.name=== selectedCategory && 'white'}}
+                    >
+                        {category.name}
+                    </FilterItem>
+                ))}
             </FilterList>
+            {scrollPosition>0 &&
+            <ArrowContainer onClick={handleScrollRight}>
+                <KeyboardArrowRightIcon/>
+            </ArrowContainer>
+            }
         </Filters>
         <Main>
             <Wrapper>
                 <VideoContainer >
-                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} onClick={()=> navigate('/single-video')} controls></Video>  
+                    <Video src='' active={activeMenu} onClick={()=> navigate('/single-video')} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} onClick={()=> navigate('/single-video')} controls></Video>  
+                    <Video src='' active={activeMenu} onClick={()=> navigate('/single-video')} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
+                    <Video src='' active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
+                    <Video src='' active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
+                    <Video src='' active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
+                    <Video src='' active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
+                    <Video src='' active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <Video src='https://youtu.be/hP77Rua1E0c'  active={activeMenu} controls></Video>  
+                    <Video src=''  active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <Video src='https://youtu.be/hP77Rua1E0c'  active={activeMenu} controls></Video>  
+                    <Video src=''  active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
+                    <Video src='' active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
+                    <Video src='' active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
+                    <Video src='' active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
+                    <Video src='' active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
+                    <Video src='' active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
+                    <Video src='' active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
                 </VideoContainer>
                 <VideoContainer>
-                    <Video src='https://youtu.be/hP77Rua1E0c' active={activeMenu} controls></Video>  
+                    <Video src='' active={activeMenu} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>
