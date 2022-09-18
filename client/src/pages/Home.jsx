@@ -30,14 +30,12 @@ const FilterList = styled.ul`
     display: flex;
     flex-direction: row;
     gap: 1rem;
-    
     overflow-x: scroll;
     width: 100%;
     align-items: center;
     justify-content: space-between;
     list-style-type: none;
     padding: 0px;
-    margin:0% 2% 0% -4%;
     ::-webkit-scrollbar {
         width: 0px;
         height: 0px;
@@ -54,7 +52,7 @@ const FilterItem = styled.li`
     &:hover{
         background: #d3cfcf;
     }
-    `
+`
 const ArrowContainer = styled.div`
     z-index: 5;
     background-color: white;
@@ -63,8 +61,7 @@ const ArrowContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 10px 0px #fcfcfc;
-    border-radius : 50% 50% 50% 50%;
+    border-radius : 50%;
     cursor: pointer;
 `
 const Main = styled.div`
@@ -131,6 +128,7 @@ const Home = () => {
                     </FilterItem>
                 ))}
             </FilterList>
+            
             {scrollPosition>0 &&
             <ArrowContainer onClick={handleScrollRight}>
                 <KeyboardArrowRightIcon/>
