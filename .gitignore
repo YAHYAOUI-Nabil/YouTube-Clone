@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /node_modules
 .env
+=======
+node_modules
+>>>>>>> 946057791a93ac32b0c133bd279d4e0ccbcd6f65
 client/node_modules
 client/build
