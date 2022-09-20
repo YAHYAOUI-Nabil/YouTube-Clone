@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { useStateContext } from '../contexts/ContextsProvider';
+import axios from 'axios'
 
 
 import Menu from '../components/Menu'
@@ -57,6 +58,17 @@ const Video = styled.video`
 
 const SingleVideoPage = () => {
     const {activeMenu, setActiveMenu} = useStateContext();
+    const [videos, setVideos] = useState({})
+
+    useEffect(() => {
+        const fn = async () => {
+            const response = await axios.get('http://localhost:5000/api/youtube/videos')
+            setVideos(response.data[0])
+            console.log(videos)
+        }
+        fn()
+    }, [])
+    
   return (
     <>
     <Navbar />
@@ -70,7 +82,7 @@ const SingleVideoPage = () => {
         <Wrapper>
             <VideoContainer>
                 <div>
-                    <Video src='' controls></Video>  
+                    <Video src={videos.videoUrl} controls></Video>  
                     <div>video1</div>
                     <div>Nabil Yahyaoui</div>
                     <div>7.5m views</div>

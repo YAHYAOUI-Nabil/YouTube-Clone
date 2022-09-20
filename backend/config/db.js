@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 
 const connectDB = async() => {
     try {
-        const conn = await mongoose.connect(process.env.MONGO_URI)
+        const conn = await mongoose.connect('mongodb+srv://youtube:FyZwKWqAsbyqqYP7@cluster-youtube.gkl6i7w.mongodb.net/Youtube?retryWrites=true&w=majority')
         console.log(`MongoDB connected : ${conn.connection.host}`)
     }
     catch (error) {
